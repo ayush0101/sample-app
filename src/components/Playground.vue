@@ -5,6 +5,8 @@
     <p>ID: {{ id }}</p>
     <p>City: {{ city }}</p>
     <p>Query Parameters: {{ qp }}</p>
+
+    <button class="btn btn-warning" @click="navigate">Reload with id</button>
   </div>
 </template>
 
@@ -15,6 +17,11 @@ export default {
     return {
       qp: this.$route.query,
     };
+  },
+  methods: {
+    navigate() {
+      this.$router.push({ path: "/playground/45879" });
+    },
   },
 };
 </script>
